@@ -7,6 +7,7 @@ Install from scratch on a new machine with one script.
 
 ## Quick Start
 
+### Fresh Arch install (nothing on it yet)
 ```bash
 # 1. Clone this repo
 git clone https://github.com/xXArachFrikXx/frik-rice.git ~/frik-rice
@@ -21,7 +22,16 @@ bash transfer-music.sh <old-machine-ip>
 # 4. Log out and back in — done!
 ```
 
-The install script will tell you exactly what it's doing at every step.
+### Already have stuff installed? Reset to bare Arch first
+If the machine has an existing desktop or random packages, wipe it to a minimal
+base before installing. Switch to a TTY first (Ctrl+Alt+F2), then:
+```bash
+cd ~/frik-rice
+bash reset.sh    # strips everything except core system packages
+bash install.sh  # installs everything fresh
+```
+
+The install script tells you exactly what it's doing at every step.
 It skips packages that are already installed, so re-running it is always safe.
 
 ---
