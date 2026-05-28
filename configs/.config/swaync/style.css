@@ -1,0 +1,4 @@
+/* Swaync colors — pulls from waybar's matugen-generated colors.css */
+@import '/home/Frik/.config/waybar/colors.css';
+@import 'themes/control_center.css';
+@import 'themes/notifications.css';

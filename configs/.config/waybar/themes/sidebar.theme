@@ -1,0 +1,3 @@
+# Floating left sidebar — same modules arranged vertically
+CONFIG=sidebar
+STYLE=sidebar

@@ -1,0 +1,33 @@
+{
+"include": [
+  "$HOME/.config/waybar/modules.jsonc",
+  ],
+"layer": "bottom",
+"exclusive": true,
+"passthrough": false,
+"position": "left",
+"spacing": 2,
+"fixed-center": true,
+"ipc": true,
+"width": 46,
+
+"modules-left": [
+	"custom/arch",
+	"clock#3",
+	],
+
+"modules-center": [
+	"hyprland/workspaces#numbers",
+	],
+
+"modules-right": [
+	"custom/cpu-temp",
+	"custom/gpu-temp",
+	"custom/gpu-load",
+	"memory#percent",
+	"group/notify",
+	"group/audio",
+	"custom/power",
+	"network",
+	],
+}

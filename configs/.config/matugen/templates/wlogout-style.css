@@ -1,0 +1,64 @@
+* {
+    font-family: JetBrainsMono NFM;
+    font-size: 20px;
+    background-color: transparent;
+}
+
+window {
+    background-color: rgba(4, 4, 6, 0.93);
+}
+
+button {
+    border-radius: 20px;
+    background-color: {{ colors.surface_container.default.hex }};
+    color: {{ colors.on_surface.default.hex }};
+    border: 2px solid {{ colors.outline_variant.default.hex }};
+    margin: 10px;
+    padding: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25%;
+    animation: gradient_f 20s ease-in infinite;
+    transition: background-size 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+button:hover {
+    background-color: {{ colors.primary_container.default.hex }};
+    color: {{ colors.on_primary_container.default.hex }};
+    border-color: {{ colors.primary.default.hex }};
+    background-size: 30%;
+    animation: gradient_f 20s ease-in infinite;
+    transition: background-size 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes gradient_f {
+    0% { background-size: 20%; }
+    50% { background-size: 30%; }
+    100% { background-size: 20%; }
+}
+
+#lock {
+    background-image: image(url("/home/Frik/.config/wlogout/icons/lock.png"));
+}
+
+#logout {
+    background-image: image(url("/home/Frik/.config/wlogout/icons/logout.png"));
+}
+
+#suspend {
+    background-image: image(url("/home/Frik/.config/wlogout/icons/suspend.png"));
+}
+
+#shutdown {
+    background-image: image(url("/home/Frik/.config/wlogout/icons/shutdown.png"));
+}
+
+#reboot {
+    background-image: image(url("/home/Frik/.config/wlogout/icons/reboot.png"));
+}
+
+#hibernate {
+    background-image: image(url("/home/Frik/.config/wlogout/icons/hibernate.png"));
+}

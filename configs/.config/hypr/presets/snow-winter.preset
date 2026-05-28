@@ -1,0 +1,4 @@
+WALLPAPER=/home/Frik/Wallpapers/Snow2.jpg
+SCHEME=tonal-spot
+SEED_COLOR=#f68500
+WAYBAR_THEME=solid-buttons

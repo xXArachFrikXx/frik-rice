@@ -1,0 +1,83 @@
+# matugen config — Dynamic color theming from wallpapers
+# When you pick a wallpaper via SUPER+W (wppicker.sh), matugen runs `matugen image <path>`.
+# Matugen extracts a Material Design 3 color palette from the wallpaper,
+# then renders each template below and writes the result to the output_path.
+# post_hook runs after writing, to tell each app to reload its colors.
+# See: https://matugen.moe/
+
+# === WALLPAPER BACKEND ===
+# matugen calls this command to actually SET the wallpaper (awww = rebranded swww)
+[config.wallpaper]
+command   = "awww"
+arguments = ["img", "--transition-type", "any", "--transition-fps", "60"]
+set       = true  # Tell matugen to set the wallpaper via this command
+
+# === COLOR TEMPLATES ===
+# Each [templates.NAME] block defines one app to theme.
+# input_path  = the template file (uses {{ colors.NAME.default.hex }} syntax)
+# output_path = where the rendered color file is written
+# post_hook   = shell command to tell the app to reload its colors
+
+[templates.waybar]
+input_path  = '~/.config/matugen/templates/colors.css'
+output_path = '~/.config/waybar/colors.css'
+post_hook   = 'pkill -SIGUSR2 waybar; pkill swaync && sleep 0.3 && swaync &'
+# SIGUSR2 = waybar reload signal; swaync is restarted because it imports waybar/colors.css
+
+[templates.kitty]
+input_path  = '~/.config/matugen/templates/kitty-colors.conf'
+output_path = '~/.config/kitty/colors.conf'
+post_hook   = "kill -SIGUSR1 $(pidof kitty)"  # SIGUSR1 = kitty color reload signal
+
+[templates.hyprland]
+input_path  = '~/.config/matugen/templates/hyprland-colors.conf'
+output_path = '~/.config/hypr/colors.conf'
+# No post_hook here — hyprlock sources this file at lock time; no runtime reload needed
+
+[templates.hyprland_lua]
+input_path  = '~/.config/matugen/templates/hyprland-colors.lua'
+output_path = '~/.config/hypr/Modules/colors.lua'
+post_hook   = 'hyprctl reload'  # Reload Hyprland after Lua colors are written so borders update
+
+[templates.gtk3]
+input_path  = '~/.config/matugen/templates/gtk-colors.css'
+output_path = '~/.config/gtk-3.0/colors.css'
+# Toggle color-scheme to force GTK 3 apps to reload the new colors
+post_hook   = "gsettings set org.gnome.desktop.interface color-scheme 'default' && gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'"
+
+[templates.gtk4]
+input_path  = '~/.config/matugen/templates/gtk-colors.css'
+output_path = '~/.config/gtk-4.0/colors.css'
+# Same toggle trick — forces GTK 4 apps (Nautilus, etc.) to reread colors
+post_hook   = "gsettings set org.gnome.desktop.interface color-scheme 'default' && gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'"
+
+[templates.rofi]
+input_path  = '~/.config/matugen/templates/rofi-colors.rasi'
+output_path = '~/.config/rofi/colors.rasi'
+# No post_hook needed — rofi reads colors.rasi each time it opens
+
+[templates.cava]
+input_path  = '~/.config/matugen/templates/matugen-cava'
+output_path = '~/.config/cava/config'
+post_hook   = "pkill -USR1 cava"  # USR1 = cava reload signal
+
+[templates.spicetify]
+input_path  = '~/.config/matugen/templates/spotify-colors.ini'
+output_path = '~/.config/spicetify/Themes/text/color.ini'
+# Requires running `spicetify apply` manually after wallpaper change to see the new colors
+
+[templates.vesktop]
+input_path  = '~/.config/matugen/templates/midnight-discord.css'
+output_path = '~/.config/vesktop/themes/matugen.css'
+# Vesktop (Discord) reads theme CSS on reload; CTRL+R inside Discord applies it
+
+[templates.wlogout]
+input_path  = '~/.config/matugen/templates/wlogout-style.css'
+output_path = '~/.config/wlogout/style.css'
+# No post_hook needed — wlogout reads style.css fresh each time it opens
+
+[templates.btop]
+input_path  = '~/.config/matugen/templates/btop-theme'
+output_path = '~/.config/btop/themes/matugen.theme'
+post_hook   = 'pkill -SIGUSR1 btop 2>/dev/null; true'
+# SIGUSR1 forces btop to redraw; theme is fully applied on next btop start

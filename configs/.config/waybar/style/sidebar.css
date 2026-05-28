@@ -1,0 +1,172 @@
+@import "colors.css";
+
+* {
+	font-family: "JetBrainsMono Nerd Font Propo", "Symbols Nerd Font";
+	font-weight: bold;
+	min-height: 0;
+	font-size: 92%;
+	font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
+}
+
+/* Solid full-height strip on the left */
+window#waybar,
+window#waybar.empty,
+window#waybar.empty #window {
+	background-color: @surface_container_low;
+	border-right: 1px solid @outline_variant;
+}
+
+tooltip {
+	color: @inverse_surface;
+	background: rgba(0, 0, 0, 0.8);
+	border-radius: 12px;
+}
+
+tooltip label {
+	color: @inverse_surface;
+}
+
+/* Module groups — no background, they blend into the bar */
+.modules-left,
+.modules-center,
+.modules-right {
+	color: @on_surface;
+	padding: 2px 0;
+}
+
+/* Workspace buttons — vertical stack */
+#taskbar button,
+#workspaces button {
+	color: @outline;
+	box-shadow: none;
+	text-shadow: none;
+	padding: 4px 6px;
+	border-radius: 8px;
+	min-width: 28px;
+}
+
+#taskbar button:hover,
+#workspaces button:hover {
+	color: @on_surface;
+}
+
+#taskbar button.active,
+#workspaces button.active {
+	color: @on_primary_container;
+	background-color: @primary_container;
+	border-radius: 8px;
+}
+
+#workspaces button.urgent {
+	color: @error;
+}
+
+/* All modules — tight padding to keep the bar narrow */
+#backlight,
+#backlight-slider,
+#battery,
+#bluetooth,
+#clock,
+#cpu,
+#disk,
+#idle_inhibitor,
+#keyboard-state,
+#memory,
+#mode,
+#mpris,
+#network,
+#power-profiles-daemon,
+#pulseaudio,
+#pulseaudio-slider,
+#taskbar,
+#temperature,
+#tray,
+#window,
+#wireplumber,
+#workspaces,
+#custom-backlight,
+#custom-browser,
+#custom-cava_mviz,
+#custom-cycle_wall,
+#custom-dot_update,
+#custom-file_manager,
+#custom-keybinds,
+#custom-keyboard,
+#custom-light_dark,
+#custom-lock,
+#custom-hint,
+#custom-hypridle,
+#custom-menu,
+#custom-playerctl,
+#custom-power_vertical,
+#custom-power,
+#custom-quit,
+#custom-reboot,
+#custom-settings,
+#custom-spotify,
+#custom-swaync,
+#custom-tty,
+#custom-updater,
+#custom-cpu-temp,
+#custom-gpu-temp,
+#custom-gpu-load,
+#custom-arch,
+#custom-weather,
+#custom-weather.clearNight,
+#custom-weather.cloudyFoggyDay,
+#custom-weather.cloudyFoggyNight,
+#custom-weather.default,
+#custom-weather.rainyDay,
+#custom-weather.rainyNight,
+#custom-weather.severe,
+#custom-weather.showyIcyDay,
+#custom-weather.snowyIcyNight,
+#custom-weather.sunnyDay {
+	color: @on_surface_variant;
+	padding: 5px 4px;
+}
+
+/*-----Indicators----*/
+#custom-hypridle.notactive,
+#idle_inhibitor.activated {
+	color: #39FF14;
+}
+
+#pulseaudio.muted {
+	color: @error;
+}
+
+#temperature.critical {
+	color: @error;
+}
+
+#battery.critical:not(.charging) {
+	color: @error;
+}
+
+@keyframes blink {
+	to { color: #000000; }
+}
+
+#backlight-slider slider,
+#pulseaudio-slider slider {
+	min-width: 0px;
+	min-height: 0px;
+	opacity: 0;
+	background-image: none;
+	border: none;
+	box-shadow: none;
+}
+
+#backlight-slider trough,
+#pulseaudio-slider trough {
+	min-width: 5px;
+	min-height: 50px;
+	border-radius: 5px;
+}
+
+#backlight-slider highlight,
+#pulseaudio-slider highlight {
+	min-height: 10px;
+	border-radius: 5px;
+}
