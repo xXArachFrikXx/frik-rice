@@ -106,17 +106,12 @@ hl.layer_rule({ name = "logout-blur",   match = { namespace = "logout_dialog" },
 hl.layer_rule({ name = "swaync-cc-blur",  match = { namespace = "swaync-control-center" },       blur = true, ignore_alpha = 0.5, xray = 0 })
 hl.layer_rule({ name = "swaync-win-blur", match = { namespace = "swaync-notification-window" },  blur = true, ignore_alpha = 0.5, xray = 0 })
 
--- === WORKSPACE-TO-MONITOR MAPPING ===
--- Pins each workspace number to a specific monitor so they don't drift.
--- Workspaces 1-5 live on the main HDMI monitor, 6-10 on the DisplayPort monitor.
+-- === WORKSPACE RULES ===
+-- Workspace 1 auto-opens the homepage layout on first use.
+-- No monitor = "..." assignment here — workspaces float freely between monitors.
+-- This works correctly on single-monitor setups and lets multi-monitor setups
+-- choose which workspace lives where manually.
+-- To pin workspaces to specific monitors, add: monitor = "HDMI-A-1" (or your port name).
+-- Run `hyprctl monitors` inside Hyprland to see your actual port names.
 
-hl.workspace_rule({ workspace = "1",  monitor = "HDMI-A-1", default = true, on_created_empty = "exec:~/.config/hypr/scripts/ws1-home.sh" })
-hl.workspace_rule({ workspace = "2",  monitor = "HDMI-A-1", default = true })
-hl.workspace_rule({ workspace = "3",  monitor = "HDMI-A-1", default = true })
-hl.workspace_rule({ workspace = "4",  monitor = "HDMI-A-1", default = true })
-hl.workspace_rule({ workspace = "5",  monitor = "HDMI-A-1", default = true })
-hl.workspace_rule({ workspace = "6",  monitor = "DP-1",     default = true })
-hl.workspace_rule({ workspace = "7",  monitor = "DP-1",     default = true })
-hl.workspace_rule({ workspace = "8",  monitor = "DP-1",     default = true })
-hl.workspace_rule({ workspace = "9",  monitor = "DP-1",     default = true })
-hl.workspace_rule({ workspace = "10", monitor = "DP-1",     default = true })
+hl.workspace_rule({ workspace = "1",  on_created_empty = "exec:~/.config/hypr/scripts/ws1-home.sh" })

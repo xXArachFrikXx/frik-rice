@@ -1,4 +1,3 @@
-amd-ucode
 awww
 base
 base-devel
@@ -30,8 +29,6 @@ mpd
 nautilus
 neovim
 networkmanager
-nvidia-open-dkms
-nvidia-utils
 obsidian
 openbsd-netcat
 papirus-icon-theme

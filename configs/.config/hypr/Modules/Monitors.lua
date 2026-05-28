@@ -4,21 +4,19 @@
 
 -- See https://wiki.hypr.land/Configuring/Basics/Monitors/
 -- hl.monitor() configures each physical display.
--- output   = port name (run `hyprctl monitors` to see yours)
--- mode     = resolution@refreshrate
--- position = x,y offset in pixels (arrange side-by-side, stacked, etc.)
+-- output   = port name (run `hyprctl monitors` to see yours), or "preferred" to auto-detect all
+-- mode     = resolution@refreshrate, or "preferred" for each monitor's native best mode
+-- position = x,y offset in pixels, or "auto" to let Hyprland arrange side by side
 -- scale    = DPI scaling factor (1 = 100%, 2 = 200% for HiDPI)
 
+-- AUTO-DETECT: works on any machine with 1 or more monitors.
+-- Hyprland picks each monitor's best resolution/refresh rate and arranges them.
+-- After logging in, run `hyprctl monitors` to see your actual port names.
+-- To lock in specific resolutions, refresh rates, or positions, replace this
+-- with per-monitor blocks — see docs/MONITORS.md for examples.
 hl.monitor({
-    output   = "HDMI-A-1",       -- Primary monitor on HDMI
-    mode     = "1920x1080@144",  -- 1080p at 144Hz
-    position = "1920x0",         -- Placed to the RIGHT of DP-1
-    scale    = "1",
-})
-
-hl.monitor({
-    output   = "DP-1",           -- Secondary monitor on DisplayPort
-    mode     = "1920x1080@60",   -- 1080p at 60Hz
-    position = "0x0",            -- Leftmost position
+    output   = "preferred",
+    mode     = "preferred",
+    position = "auto",
     scale    = "1",
 })

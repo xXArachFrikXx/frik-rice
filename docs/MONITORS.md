@@ -1,45 +1,70 @@
 # Monitor Setup
 
-The monitor configuration needs to be updated for the new machine since
-monitor connector names differ between systems.
+Out of the box, Hyprland auto-detects all connected monitors and picks their
+best resolution and refresh rate. You don't need to touch anything for a
+single-monitor setup — it just works.
 
 ---
 
-## Current Setup (original machine)
-
-- Monitor 1: `HDMI-A-1` — main monitor, workspaces 1–5
-- Monitor 2: `DP-1` — secondary monitor, workspaces 6–10
-
----
-
-## How to Find Your Monitor Names
+## Find Your Monitor Names
 
 After logging into Hyprland, open a terminal and run:
 ```bash
 hyprctl monitors
 ```
 
-Look for lines like:
+You'll see output like:
 ```
-Monitor HDMI-A-1 (ID 0): 1920x1080 at 0x0 ...
-Monitor DP-1 (ID 1): 1920x1080 at 1920x0 ...
+Monitor HDMI-A-1 (ID 0): 1920x1080@144Hz at 0x0 ...
+Monitor DP-1 (ID 1): 1920x1080@60Hz at 1920x0 ...
 ```
+
+The name before the parenthesis (`HDMI-A-1`, `DP-1`, etc.) is what you use in
+the config. Names differ between machines and GPUs.
 
 ---
 
-## Where to Edit
+## Lock In Specific Settings (optional)
 
-Open `~/.config/hypr/Modules/Monitors.lua` and update the monitor names.
-Also update `~/.config/hypr/Modules/WindowsWorkspace.lua` — the workspace rules
-at the bottom use the same monitor names to pin workspaces 1–5 and 6–10.
+If you want exact resolution, refresh rate, or monitor positions, edit
+`~/.config/hypr/Modules/Monitors.lua` and replace the auto-detect block with
+per-monitor entries:
 
----
-
-## Single Monitor Setup
-
-If you only have one monitor, in `WindowsWorkspace.lua` change all workspace rules
-to use your single monitor name:
 ```lua
-hl.workspace_rule({ workspace = "1",  monitor = "YOUR-MONITOR-NAME", default = true })
--- repeat for 2–10
+-- Example: two monitors, HDMI primary at 144Hz, DP secondary at 60Hz
+hl.monitor({
+    output   = "HDMI-A-1",
+    mode     = "1920x1080@144",
+    position = "1920x0",   -- to the right of DP-1
+    scale    = "1",
+})
+hl.monitor({
+    output   = "DP-1",
+    mode     = "1920x1080@60",
+    position = "0x0",
+    scale    = "1",
+})
 ```
+
+---
+
+## Pin Workspaces to Monitors (optional)
+
+By default workspaces float freely between monitors. To lock workspaces 1–5
+to the left monitor and 6–10 to the right, add monitor assignments to
+`~/.config/hypr/Modules/WindowsWorkspace.lua`:
+
+```lua
+hl.workspace_rule({ workspace = "1",  monitor = "HDMI-A-1", default = true, on_created_empty = "exec:~/.config/hypr/scripts/ws1-home.sh" })
+hl.workspace_rule({ workspace = "2",  monitor = "HDMI-A-1", default = true })
+hl.workspace_rule({ workspace = "3",  monitor = "HDMI-A-1", default = true })
+hl.workspace_rule({ workspace = "4",  monitor = "HDMI-A-1", default = true })
+hl.workspace_rule({ workspace = "5",  monitor = "HDMI-A-1", default = true })
+hl.workspace_rule({ workspace = "6",  monitor = "DP-1",     default = true })
+hl.workspace_rule({ workspace = "7",  monitor = "DP-1",     default = true })
+hl.workspace_rule({ workspace = "8",  monitor = "DP-1",     default = true })
+hl.workspace_rule({ workspace = "9",  monitor = "DP-1",     default = true })
+hl.workspace_rule({ workspace = "10", monitor = "DP-1",     default = true })
+```
+
+Replace `HDMI-A-1` and `DP-1` with your actual monitor names from `hyprctl monitors`.

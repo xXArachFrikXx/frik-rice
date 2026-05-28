@@ -165,6 +165,69 @@ else
 fi
 
 # =============================================================================
+# 3.5 GPU drivers (auto-detected)
+# =============================================================================
+section "GPU drivers"
+
+if ! command -v lspci &>/dev/null; then
+    # pciutils gives us lspci; install it if missing
+    run sudo pacman -S --needed --noconfirm pciutils
+fi
+
+GPU_INFO=$(lspci 2>/dev/null | grep -iE "(vga|3d controller|display controller)")
+GPU_PKGS=()
+
+if echo "$GPU_INFO" | grep -qi "nvidia"; then
+    info "NVIDIA GPU detected"
+    GPU_PKGS=(nvidia-open-dkms nvidia-utils)
+elif echo "$GPU_INFO" | grep -qi "amd\|ati\|radeon"; then
+    info "AMD GPU detected"
+    GPU_PKGS=(mesa vulkan-radeon libva-mesa-driver)
+elif echo "$GPU_INFO" | grep -qi "intel"; then
+    info "Intel GPU detected"
+    GPU_PKGS=(mesa vulkan-intel intel-media-driver)
+else
+    info "GPU vendor not detected — skipping driver install"
+    info "Install drivers manually if Hyprland doesn't start: nvidia-open-dkms, mesa, or intel-media-driver"
+fi
+
+GPU_TO_INSTALL=()
+for pkg in "${GPU_PKGS[@]}"; do
+    if is_installed "$pkg"; then
+        skip "$pkg"
+    else
+        info "$pkg — will install"
+        GPU_TO_INSTALL+=("$pkg")
+    fi
+done
+
+if [[ ${#GPU_TO_INSTALL[@]} -gt 0 ]]; then
+    run sudo pacman -S --needed --noconfirm "${GPU_TO_INSTALL[@]}"
+    ok "GPU drivers installed"
+fi
+
+# =============================================================================
+# 3.6 CPU microcode (security/stability patches applied at boot)
+# =============================================================================
+section "CPU microcode"
+
+CPU_VENDOR=$(grep -m1 "vendor_id" /proc/cpuinfo 2>/dev/null | awk '{print $3}')
+if [[ "$CPU_VENDOR" == "GenuineIntel" ]]; then
+    info "Intel CPU detected"
+    UCODE_PKG="intel-ucode"
+else
+    info "AMD CPU detected"
+    UCODE_PKG="amd-ucode"
+fi
+
+if is_installed "$UCODE_PKG"; then
+    skip "$UCODE_PKG already installed"
+else
+    run sudo pacman -S --needed --noconfirm "$UCODE_PKG"
+    ok "$UCODE_PKG installed"
+fi
+
+# =============================================================================
 # 4. Link config files
 # =============================================================================
 section "Config files"
@@ -348,8 +411,9 @@ echo ""
 echo -e "  1. ${CYAN}Transfer your music${NC} (see docs/MUSIC.md):"
 echo -e "     ${YELLOW}bash transfer-music.sh <old-machine-ip>${NC}"
 echo ""
-echo -e "  2. ${CYAN}Fix monitor layout${NC} in ~/.config/hypr/Modules/Monitors.lua"
-echo -e "     — set your monitor names (run ${YELLOW}hyprctl monitors${NC} to see them)"
+echo -e "  2. ${CYAN}(Optional) Customize monitors${NC} — the config auto-detects all connected displays."
+echo -e "     If layout is wrong, run ${YELLOW}hyprctl monitors${NC} inside Hyprland, then edit:"
+echo -e "     ${YELLOW}~/.config/hypr/Modules/Monitors.lua${NC}  (see docs/MONITORS.md)"
 echo ""
 echo -e "  3. ${CYAN}Log out and back in${NC} to Hyprland"
 echo ""
