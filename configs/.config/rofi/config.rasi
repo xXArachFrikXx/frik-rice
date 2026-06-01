@@ -6,10 +6,10 @@ configuration {
 	display-drun: "Applications";
 	display-window: "Windows";
 	display-run: "Run";
-	drun-display-format: "{icon} {name}";
+	drun-display-format: "{name}";
 	font: "JetBrainsMono Nerd Font 10";
-	show-icons: true;
-	icon-theme: "Colloid";
+	show-icons: false;
+	icon-theme: "Colloid-Grey-Dark";
 }
 
 window {
@@ -24,11 +24,11 @@ window {
 
     /* properties for all widgets */
     enabled:                     true;
-    border:			 2px solid;
-    border-color:		 @secondary-container;
+    border:			 5px solid;
+    border-color: @rofi-bg;
     border-radius:               15px;
     cursor:                      "default";
-    background-color:            @on-primary-fixed;
+    background-color: @rofi-bg;
 }
 
 mainbox {
@@ -64,8 +64,8 @@ inputbar {
     spacing:                     10px;
     padding:                     15px;
     border-radius:               10px;
-    background-color:		 @on-primary;
-    text-color:			 @on-surface;
+    background-color: @rofi-bg;
+    text-color: @rofi-fg;
     children:                    [ "textbox-prompt-colon", "entry" ];
 }
 textbox-prompt-colon {
@@ -81,25 +81,25 @@ entry {
     text-color:                  inherit;
     cursor:                      text;
     placeholder:                 "Search";
-    placeholder-color:           inherit;
+    placeholder-color: inherit;
 }
 
 mode-switcher{
     enabled:                     true;
     spacing:                     20px;
     background-color:            transparent;
-    text-color:                  @primary-fixed;
+    text-color:                  @red;
 }
 button {
     padding:                     15px;
     border-radius:               10px;
-    background-color:            @on-primary;
-    text-color:                  inherit;
+    background-color: @rofi-bg;
+    text-color: @rofi-fg;
     cursor:                      pointer;
 }
 button selected {
-    background-color:            @primary;
-    text-color:                  @on-secondary;
+    background-color: @rofi-bg;
+    text-color: @rofi-fg;
 }
 
 listview {
@@ -116,7 +116,7 @@ listview {
     
     spacing:                     10px;
     background-color:            transparent;
-    text-color:                  @on-surface;
+    text-color: @rofi-fg;
     cursor:                      "default";
 }
 
@@ -126,7 +126,7 @@ element {
     padding:                     8px;
     border-radius:               10px;
     background-color:            transparent;
-    text-color:                  @on-surface;
+    text-color: @rofi-fg;
     cursor:                      pointer;
 }
 element normal.normal {
@@ -134,24 +134,24 @@ element normal.normal {
     text-color:                  inherit;
 }
 element normal.urgent {
-    background-color:            @error;
-    text-color:                  @on-surface;
+    background-color:            @red;
+    text-color: @rofi-fg;
 }
 element normal.active {
-    background-color:            @primary;
-    text-color:                  @on-surface;
+    background-color:            @red;
+    text-color: @rofi-fg;
 }
 element selected.normal {
-    background-color:            @primary;
-    text-color:                  @on-secondary;
+    background-color: @rofi-selected;
+    text-color: @rofi-bg;
 }
 element selected.urgent {
-    background-color:            @error;
-    text-color:                  @on-secondary;
+    background-color:            @red;
+    text-color: @rofi-fg;
 }
 element selected.active {
-    background-color:            @error;
-    text-color:                  @on-secondary;
+    background-color:            @red;
+    text-color: @rofi-fg;
 }
 element-icon {
     background-color:            transparent;
@@ -173,14 +173,14 @@ message {
 textbox {
     padding:                     15px;
     border-radius:               10px;
-    background-color:            @on-primary;
-    text-color:                  @on-surface;
+    background-color: @rofi-bg;
+    text-color: @rofi-fg;
     vertical-align:              0.5;
     horizontal-align:            0.0;
 }
 error-message {
     padding:                     15px;
     border-radius:               20px;
-    background-color:            @on-primary;
-    text-color:                  @on-surface;
+    background-color:            @bg;
+    text-color: @rofi-fg;
 }

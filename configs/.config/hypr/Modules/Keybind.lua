@@ -23,22 +23,19 @@ hl.bind(mainMod .. " + E",            hl.dsp.exec_cmd(fileManager))             
 hl.bind(mainMod .. " + Space",        hl.dsp.window.float({ action = "toggle" }))                                   -- Toggle floating on focused window
 hl.bind(mainMod .. " + D",            hl.dsp.exec_cmd(menu))                                                        -- Open app launcher (rofi)
 hl.bind(mainMod .. " + P",            hl.dsp.window.pseudo())                                                       -- Toggle pseudo-tile (dwindle layout)
-hl.bind(mainMod .. " + J",            hl.dsp.layout("togglesplit"))                                                      -- Toggle dwindle split direction
+hl.bind(mainMod .. " + J",            hl.dsp.layout("togglesplit"))-- dwindle only                                  -- Toggle dwindle split direction
 hl.bind(mainMod .. " + R",            hl.dsp.exec_cmd("~/.config/hypr/scripts/wbrestart.sh"))                       -- Restart waybar + swaync
 hl.bind(mainMod .. " + B",            hl.dsp.exec_cmd("xdg-open 'https://'"))                                       -- Open default browser
 hl.bind(mainMod .. " + L",            hl.dsp.exec_cmd("~/.config/hypr/scripts/hyprlock.sh"))                        -- Lock screen
 hl.bind(mainMod .. " + SHIFT + F",    hl.dsp.window.fullscreen())                                                   -- Toggle fullscreen
 hl.bind(mainMod .. " + SHIFT + S",    hl.dsp.exec_cmd("~/.config/hypr/scripts/screenshot.sh"))                      -- Screenshot (region select)
-hl.bind(mainMod .. " + W",            hl.dsp.exec_cmd("~/.config/hypr/scripts/PresetPicker.sh"))                    -- Theme preset picker (rofi menu)
-hl.bind(mainMod .. " + ALT + W",      hl.dsp.exec_cmd("~/.config/hypr/scripts/wppicker.sh"))                        -- Wallpaper picker (rofi thumbnail menu)
+hl.bind(mainMod .. " + W",      hl.dsp.exec_cmd("eww open --toggle wallpaper-picker"))                     -- Wallpaper picker toggle (eww widget)
 hl.bind(mainMod .. " + SHIFT + Q",    hl.dsp.exec_cmd("~/.config/hypr/scripts/KillActiveProcess.sh"))               -- Force-kill active window's process
-hl.bind(mainMod .. " + SHIFT + W",    hl.dsp.exec_cmd("~/.config/hypr/scripts/WaybarTheme.sh"))                    -- Waybar theme picker (layout + style in one)
 hl.bind(mainMod .. " + M",            hl.dsp.exec_cmd("~/.config/hypr/scripts/music-overlay.sh"))                     -- Toggle music overlay (rmpc + cava)
 hl.bind(mainMod .. " + ALT + 1",      hl.dsp.exec_cmd("~/.config/hypr/scripts/ws1-home.sh"))                          -- Reset workspace 1 homepage layout
-hl.bind(mainMod .. " + CTRL + B",     hl.dsp.exec_cmd("~/.config/hypr/scripts/WaybarStyles.sh"))                    -- Waybar style selector menu
-hl.bind(mainMod .. " + ALT + B",      hl.dsp.exec_cmd("~/.config/hypr/scripts/WaybarLayout.sh"))                    -- Waybar layout selector menu
 hl.bind(mainMod .. " + H",            hl.dsp.exec_cmd("pkill -SIGUSR1 waybar"))                                     -- Hide/show waybar
 hl.bind(mainMod .. " + SHIFT + E",    hl.dsp.exec_cmd("kitty yazi"))                                                -- Open Yazi file manager in terminal
+hl.bind(mainMod .. " + K",            hl.dsp.exec_cmd("hyprpicker -a"))                                              -- Color picker (copies hex to clipboard)
 
 -- === FOCUS MOVEMENT ===
 hl.bind(mainMod .. " + left",  hl.dsp.focus({ direction = "left"  }))

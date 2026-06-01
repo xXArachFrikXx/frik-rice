@@ -1,37 +1,37 @@
 format = """
-$username$hostname $directory$git_branch$git_status$cmd_duration
+\\[[$username](bold yellow)[@$hostname](bold yellow)[ $directory](bold cyan)[$git_branch](bold purple)[$git_status](bold red)[$cmd_duration](yellow)\\]
 $character"""
 
 [username]
 format = "[$user]($style)"
-style_user = "bold #f68500"
+style_user = "bold yellow"
 show_always = true
 
 [hostname]
-format = "[@$hostname]($style) "
-style = "bold #f68500"
+format = "[@$hostname]($style)"
+style = "bold yellow"
 ssh_only = false
 
 [directory]
-format = "[in $path]($style) "
+format = "[ in $path]($style)"
 style = "bold cyan"
 truncate_to_repo = false
 truncation_length = 3
 
 [git_branch]
-format = "[$symbol$branch]($style) "
+format = "[ $symbol$branch]($style)"
 style = "bold purple"
 symbol = " "
 
 [git_status]
-format = '([$all_status$ahead_behind]($style) )'
+format = '([ $all_status$ahead_behind]($style))'
 style = "bold red"
 
 [cmd_duration]
-format = "[took $duration]($style) "
+format = "[ took $duration]($style)"
 style = "yellow"
-min_time = 500
+min_time = 0
 
 [character]
-success_symbol = "[❯](bold green)"
-error_symbol = "[❯](bold red)"
+success_symbol = "[}](bold cyan)"
+error_symbol = "[}](bold red)"

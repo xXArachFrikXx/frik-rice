@@ -1,0 +1,28 @@
+* {{
+    bg:          {bg};
+    bg1:         {bg1};
+    bg2:         {bg2};
+    bg3:         {bg3};
+    bg4:         {bg4};
+    fg:          {fg};
+    fg1:         {fg1};
+    fg3:         {fg3};
+    gray2:       {gray2};
+    red:         {red};
+    dark-red:    {dark_red};
+    green:       {green};
+    dark-green:  {dark_green};
+    blue:        {blue};
+    dark-blue:   {dark_blue};
+    purple:      {purple};
+    dark-purple: {dark_purple};
+    aqua:        {aqua};
+    orange:      {orange};
+    white:       {white};
+    black:       {black};
+    accent:      {accent};
+
+    rofi-bg:       {rofi_bg};
+    rofi-fg:       {rofi_fg};
+    rofi-selected: {rofi_selected};
+}}

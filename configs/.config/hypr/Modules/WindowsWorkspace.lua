@@ -72,28 +72,28 @@ hl.window_rule({ name = "float-pavu",       match = { class = "^(org.pulseaudio.
 hl.window_rule({ name = "dialogs",    match = { title = "^(Save As|Save a File|Pick Files)$" }, float = true, size = "50% 60%", center = true })
 hl.window_rule({ name = "open-files", match = { title = "(Open Files)" },                        float = true, size = "70% 60%" })
 
--- Music overlay: two separate floating windows (rmpc top, cava bottom), above waybar with side margins
+-- Music overlay: two separate floating windows (rmpc top, cava bottom), matching regular window size
 hl.window_rule({
     name  = "rmpc-overlay",
     match = { class = "^kitty-rmpc-overlay$" },
     float = true,
-    size  = "1880 640",
-    move  = "20 56",
+    size  = "2516 858",
+    move  = "22 78",
 })
 hl.window_rule({
     name  = "cava-overlay",
     match = { class = "^kitty-cava-overlay$" },
     float = true,
-    size  = "1880 360",
-    move  = "20 716",
+    size  = "2516 462",
+    move  = "22 956",
 })
 
 -- Homepage windows: each pinned to workspace 1
 hl.window_rule({ name = "homepage-btop",     match = { class = "^kitty-btop$" },     workspace = "1 silent" })
 hl.window_rule({ name = "homepage-cmatrix",  match = { class = "^kitty-cmatrix$" },  workspace = "1 silent" })
 hl.window_rule({ name = "homepage-clock",    match = { class = "^kitty-clock$" },    workspace = "1 silent" })
-hl.window_rule({ name = "homepage-pipes",    match = { class = "^kitty-pipes$" },    workspace = "1 silent" })
-hl.window_rule({ name = "homepage-fastfetch", match = { class = "^kitty-fastfetch$" }, float = true, size = "900 640", center = true, workspace = "1 silent" })
+hl.window_rule({ name = "homepage-cava",     match = { class = "^kitty-cava$" },     workspace = "1 silent" })
+hl.window_rule({ name = "homepage-fastfetch", match = { class = "^kitty-fastfetch$" }, float = true, size = "900 640", move = "830 480", workspace = "1 silent" })
 
 -- === LAYER RULES ===
 -- These apply to compositor overlay layers, not regular windows.

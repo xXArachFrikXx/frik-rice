@@ -4,8 +4,8 @@
         "type": "builtin",
         "source": "arch",
         "color": {
-            "1": "#b44fff",
-            "2": "#b44fff"
+            "1": "{logo_color}",
+            "2": "{logo_color}"
         },
         "padding": {
             "top": 1,
@@ -19,35 +19,35 @@
     "modules": [
         {
             "type": "custom",
-            "format": "{##f1ed0b}┌─ 󰇅 HOST ───────────────────────────────────────┐"
+            "format": "{accent.fc}┌─ 󰇅 HOST ───────────────────────────────────────┐"
         },
         {
             "type": "board",
-            "key": "{##f1ed0b}󰆼 Motherboard"
+            "key": "{accent.fc}󰆼 Motherboard"
         },
         {
             "type": "cpu",
-            "key": "{##f1ed0b} CPU"
+            "key": "{accent.fc} CPU"
         },
         {
             "type": "gpu",
-            "key": "{##f1ed0b}󰢮 GPU"
+            "key": "{accent.fc}󰢮 GPU"
         },
         {
             "type": "memory",
-            "key": "{##f1ed0b} Memory"
+            "key": "{accent.fc} Memory"
         },
         {
             "type": "disk",
-            "key": "{##f1ed0b}󰋊 Disk"
+            "key": "{accent.fc}󰋊 Disk"
         },
         {
             "type": "display",
-            "key": "{##f1ed0b}󰍹 Display"
+            "key": "{accent.fc}󰍹 Display"
         },
         {
             "type": "custom",
-            "format": "{##f1ed0b}└────────────────────────────────────────────────┘"
+            "format": "{accent.fc}└────────────────────────────────────────────────┘"
         },
         {
             "type": "custom",
@@ -55,43 +55,43 @@
         },
         {
             "type": "custom",
-            "format": "{##f1ed0b}┌─ 󰅐 RUNTIME ────────────────────────────────────┐"
+            "format": "{accent.fc}┌─ 󰅐 RUNTIME ────────────────────────────────────┐"
         },
         {
             "type": "os",
-            "key": "{##f1ed0b}󰣇 OS"
+            "key": "{accent.fc}󰣇 OS"
         },
         {
             "type": "osage",
-            "key": "{##f1ed0b}󰃰 OS Age"
+            "key": "{accent.fc}󰃰 OS Age"
         },
         {
             "type": "kernel",
-            "key": "{##f1ed0b} Kernel"
+            "key": "{accent.fc} Kernel"
         },
         {
             "type": "wm",
-            "key": "{##f1ed0b}󰖲 WM"
+            "key": "{accent.fc}󰖲 WM"
         },
         {
             "type": "shell",
-            "key": "{##f1ed0b} Shell"
+            "key": "{accent.fc} Shell"
         },
         {
             "type": "terminal",
-            "key": "{##f1ed0b}󰆍 Terminal"
+            "key": "{accent.fc}󰆍 Terminal"
         },
         {
             "type": "uptime",
-            "key": "{##f1ed0b}󰔚 Uptime"
+            "key": "{accent.fc}󰔚 Uptime"
         },
         {
             "type": "packages",
-            "key": "{##f1ed0b}󰏖 Packages"
+            "key": "{accent.fc}󰏖 Packages"
         },
         {
             "type": "custom",
-            "format": "{##f1ed0b}└────────────────────────────────────────────────┘"
+            "format": "{accent.fc}└────────────────────────────────────────────────┘"
         }
     ]
 }

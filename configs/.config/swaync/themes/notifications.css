@@ -1,8 +1,8 @@
-@define-color text            @inverse_surface;
-@define-color background-alt  @background;
-@define-color selected        @on_secondary;
-@define-color hover           @on_secondary_fixed_variant;
-@define-color urgent          @on_secondary_fixed;
+@define-color text            @fg0;
+@define-color background-alt  @bg;
+@define-color selected        @bg;
+@define-color hover           @fg3;
+@define-color urgent          @fg3;
 
 * {
 
@@ -10,7 +10,7 @@
   /*selected:              @color2;      Button selected */
   /*hover:                 @color5;      Hover button */
   /*urgent:                @color6;      Urgency critical */
-  /*text-selected:         @background; */
+  /*text-selected:         @bg; */
 
   color: @text;
 
@@ -55,7 +55,7 @@
 
 .floating-notifications.background .notification-row .notification-background .notification > *:last-child > * .notification-action {
   border-radius: 8px;
-  background-color: @background-alt ;
+  background-color: @bg-alt ;
   margin: 6px;
   border: 1px solid transparent;
 }
@@ -67,7 +67,7 @@
 
 .floating-notifications.background .notification-row .notification-background .notification > *:last-child > * .notification-action:active {
   background-color: @selected;
-  color: @background;
+  color: @bg;
 }
 
 .image {
@@ -98,11 +98,11 @@
 
 .floating-notifications.background .notification-row .notification-background .close-button:active {
   background-color: @selected;
-  color: @background;
+  color: @bg;
 }
 
 .notification.critical progress {
-  background-color: @error;
+  background-color: @red;
 }
 
 .notification.low progress,

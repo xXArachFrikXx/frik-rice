@@ -1,0 +1,97 @@
+# Colors generated from 06.png on 2026-05-30
+# Edit any hex value, then run: scheme-apply.sh /home/Frik/wallpapers/06.png
+wallpaper="/home/Frik/wallpapers/06.png"
+
+# Background variants
+bg="#020202"
+bg_h="#000000"
+bg_s="#0e0e0e"
+
+# Background shades
+bg0="#020202"
+bg1="#131313"
+bg2="#242425"
+bg3="#3c3c3d"
+bg4="#555556"
+
+# Grays
+gray0="#5c5c5d"
+gray1="#7c7c7d"
+gray2="#9d9d9e"
+
+# Foreground shades
+fg0="#f1ed0b"
+fg1="#f1ed0b"
+fg2="#f1ed0b"
+fg3="#f1ed0b"
+fg4="#f1ed0b"
+
+# Main foreground alias
+fg="#f1ed0b"
+kitty_fg="#b44fff"
+
+# Dark (muted) accents
+dark_red="#7A0A22"
+dark_green="#0E5C1E"
+dark_yellow="#6B5400"
+dark_blue="#0A3D7A"
+dark_purple="#4B1880"
+dark_aqua="#005C52"
+dark_orange="#7A2E00"
+
+# Vivid (bright) accents
+red="#ff2052"
+green="#39ff5a"
+yellow="#ffd700"
+blue="#1a8cff"
+purple="#b44fff"
+aqua="#00e5cc"
+orange="#ff6b1a"
+
+# Constants
+white="#ffffff"
+black="#000000"
+
+# Main accent
+tty_clock_color=5  # 0=black 1=red 2=green 3=yellow 4=blue 5=magenta 6=cyan 7=white
+cmatrix_color="magenta"  # black red green yellow blue magenta cyan white
+accent="#f1ed0b"
+
+btop_lines="#f1ed0b"
+btop_dividers="#3c3c3d"
+btop_text="#9d9d9e"
+btop_proc="#b44fff"
+
+# Btop gradient (low → high)
+btop_low="#f1ed0b"
+btop_mid="#7a0a22"
+btop_high="#b44fff"
+
+# Cava gradient (bottom → top)
+cava_1="#f1ed0b"
+cava_2="#7A0A22"
+cava_3="#7A0A22"
+cava_4="#b44fff"
+logo_color="#b44fff"
+
+# Waybar colors
+waybar_bg="#242425"
+waybar_bright="#f1ed0b"
+waybar_empty_button="#3c3c3d"
+
+# Rofi colors
+rofi_bg="#131313"
+rofi_fg="#f1ed0b"
+rofi_selected="#f1ed0b"
+
+# Rmpc colors
+rmpc_bg="#020202"
+rmpc_fg="#f1ed0b"
+rmpc_accent="#f1ed0b"
+rmpc_border="#3c3c3d"
+
+# Yazi colors
+yazi_bg="#020202"
+yazi_fg="#f1ed0b"
+yazi_selected="#f1ed0b"
+yazi_cwd="#1a8cff"

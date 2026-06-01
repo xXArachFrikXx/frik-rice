@@ -1,0 +1,96 @@
+/**
+ * @name midnight
+ * @description A dark, rounded discord theme.
+ * @author refact0r
+ * @version 1.6.2
+ * @invite nz87hXyvcy
+ * @website https://github.com/refact0r/midnight-discord
+ * @source https://github.com/refact0r/midnight-discord/blob/master/midnight.theme.css
+ * @authorId 508863359777505290
+ * @authorLink https://www.refact0r.dev
+*/
+
+/* IMPORTANT: make sure to enable dark mode in discord settings for the theme to apply properly!!! */
+
+@import url('https://raw.githubusercontent.com/refact0r/midnight-discord/refs/heads/master/themes/midnight.theme.css');
+
+/* customize things here */
+:root {{
+	/* font, change to 'gg sans' for default discord font*/
+	--font: 'figtree';
+
+	/* top left corner text */
+	--corner-text: 'Midnight';
+
+	/* color of status indicators and window controls */
+	--online-indicator: {red};            /* online status dot */
+	--dnd-indicator: {dark_red};          /* do not disturb dot */
+	--idle-indicator: {dark_yellow};      /* idle/away dot */
+	--streaming-indicator: {dark_purple}; /* streaming dot */
+
+	/* accent colors */
+	--accent-1: {dark_yellow};  /* hyperlinks and accent text */
+	--accent-2: {accent};        /* small accent UI components */
+	--accent-3: {dark_orange};     /* accent buttons (default state) */
+	--accent-4: {bg3};          /* accent buttons (hovered) */
+	--accent-5: {dark_green};   /* accent buttons (clicked) */
+	--mention:  {bg};           /* background of messages that mention you */
+	--mention-hover: {bg3};     /* mention background on hover */
+
+	/* text colors (1 = brightest → 5 = faintest) */
+	--text-0: {bg};    /* text drawn on colored elements (e.g. button labels) */
+	--text-1: {fg};    /* usernames, timestamps — brightest readable text */
+	--text-2: {fg};    /* headings and emphasized text */
+	--text-3: {gray2}; /* standard message / body text */
+	--text-4: {gray2}; /* icon buttons and channel names */
+	--text-5: {bg3};   /* muted channels, disabled text, faint labels */
+
+	/* background colors (4 = darkest → 1 = lightest) */
+	--bg-1: {accent}; /* buttons — pressed/clicked state */
+	--bg-2: {bg3};      /* buttons — default resting state */
+	--bg-3: {bg3};      /* spacing areas and secondary panels */
+	--bg-4: {bg};       /* primary app background (darkest layer) */
+	--hover: {bg3};         /* overlay when hovering channels/buttons */
+	--active: {bg3};        /* overlay when selecting channels/buttons */
+	--message-hover: {bg3}; /* subtle background on message hover */
+
+	/* amount of spacing and padding */
+	--spacing: 12px;
+
+	/* animations */
+	--list-item-transition: 0.2s ease;
+	--unread-bar-transition: 0.2s ease;
+	--moon-spin-transition: 0.4s ease;
+	--icon-spin-transition: 1s ease;
+
+	/* corner roundness (border-radius) */
+	--roundness-xl: 22px;
+	--roundness-l: 20px;
+	--roundness-m: 16px;
+	--roundness-s: 12px;
+	--roundness-xs: 10px;
+	--roundness-xxs: 8px;
+
+	/* direct messages moon icon */
+	--discord-icon: none;
+	--moon-icon: block;
+	--moon-icon-url: url('https://upload.wikimedia.org/wikipedia/commons/c/c4/Font_Awesome_5_solid_moon.svg');
+	--moon-icon-size: auto;
+
+	/* filter uncolorable elements to fit theme */
+	--login-bg-filter: saturate(0.3) hue-rotate(-15deg) brightness(0.4);
+	--green-to-accent-3-filter: hue-rotate(56deg) saturate(1.43);
+	--blurple-to-accent-3-filter: hue-rotate(304deg) saturate(0.84) brightness(1.2);
+}}
+
+/* Selected chat/friend text */
+.selected_f5eb4b,
+.selected_f6f816 .link_d8bfb3 {{
+  color: var(--text-0) !important;
+  background: var(--accent-3) !important;
+}}
+
+.selected_f6f816 .link_d8bfb3 * {{
+  color: var(--text-0) !important;
+  fill: var(--text-0) !important;
+}}

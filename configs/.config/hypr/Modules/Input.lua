@@ -16,6 +16,8 @@ hl.config({
         accel_profile = "flat",   -- "flat" = no acceleration curve (raw 1:1 movement)
         force_no_accel = 1,       -- Force disable acceleration even if driver enables it
 
+        scroll_factor = 1,  -- Mouse wheel scroll speed (1.0 = default, lower = slower)
+
         touchpad = {
             natural_scroll = true,  -- Reverse scroll direction (Mac-style: finger down = page down)
         },

@@ -1,0 +1,96 @@
+@import "colors.rasi"
+
+configuration {
+    show-icons: true;
+    icon-theme: "Colloid-Grey-Dark";
+    font: "JetBrainsMono Nerd Font 10";
+}
+
+window {
+    transparency: "real";
+    location: center;
+    anchor: center;
+    width: 700px;
+    height: 95%;
+    border: 5px solid;
+    border-color: @bg1;
+    border-radius: 15px;
+    background-color: @bg1;
+    cursor: "default";
+}
+
+mainbox {
+    background-color: transparent;
+    orientation: vertical;
+    children: [ "inputbar", "listview" ];
+    spacing: 10px;
+    padding: 15px;
+}
+
+inputbar {
+    spacing: 10px;
+    padding: 10px 15px;
+    border-radius: 10px;
+    background-color: @bg;
+    text-color: @fg;
+    children: [ "textbox-prompt-colon", "entry" ];
+}
+
+textbox-prompt-colon {
+    expand: false;
+    str: "  ";
+    background-color: inherit;
+    text-color: inherit;
+}
+
+entry {
+    background-color: inherit;
+    text-color: inherit;
+    cursor: text;
+    placeholder: "Search wallpapers...";
+    placeholder-color: @bg2;
+}
+
+listview {
+    columns: 1;
+    lines: 6;
+    cycle: true;
+    dynamic: true;
+    scrollbar: false;
+    layout: vertical;
+    spacing: 0px;
+    background-color: transparent;
+    cursor: "default";
+}
+
+element {
+    padding: 0px;
+    border-radius: 10px;
+    background-color: transparent;
+    cursor: pointer;
+    orientation: vertical;
+}
+
+element normal.normal {
+    background-color: transparent;
+}
+
+element selected.normal {
+    background-color: @bg;
+}
+
+element-icon {
+    size: 400px;
+    border-radius: 8px;
+    background-color: transparent;
+    cursor: inherit;
+}
+
+element-text {
+    background-color: transparent;
+    text-color: transparent;
+    cursor: inherit;
+    vertical-align: 0.5;
+    horizontal-align: 0.5;
+    padding: 0px;
+}

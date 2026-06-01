@@ -4,7 +4,7 @@ hyprctl eval '
 local wins = hl.get_windows()
 for _, w in ipairs(wins) do
     local c = w:get_class()
-    if c=="kitty-btop" or c=="kitty-clock" or c=="kitty-pipes" or c=="kitty-cmatrix" or c=="kitty-fastfetch" then
+    if c=="kitty-btop" or c=="kitty-clock" or c=="kitty-cava" or c=="kitty-cmatrix" or c=="kitty-fastfetch" then
         w:close()
     end
 end
@@ -22,10 +22,10 @@ sleep 0.2
 kitty --class kitty-btop -e btop &
 sleep 0.5
 
-# ── 2. cmatrix — split RIGHT of btop ──
-lsp 'hl.dsp.layout("preselect r")'
+# ── 2. cmatrix — split LEFT of btop (btop stays left, cmatrix opens right) ──
+lsp 'hl.dsp.layout("preselect l")'
 sleep 0.05
-kitty --class kitty-cmatrix -e cmatrix -a -b &
+kitty --class kitty-cmatrix -e cmatrix -a -b -C magenta &
 sleep 0.5
 
 # Layout: [btop | cmatrix]
@@ -34,20 +34,24 @@ sleep 0.5
 lsp 'hl.dsp.focus({ window = "class:kitty-cmatrix" })'
 lsp 'hl.dsp.layout("preselect u")'
 sleep 0.05
-kitty --class kitty-clock -e tty-clock -c -C 3 -b -s &
+kitty --class kitty-clock -e tty-clock -c -C 5 -b -s &
 sleep 0.5
+
+# Shrink top row so cmatrix gets more height (~20% top / 80% bottom)
+lsp 'hl.dsp.focus({ window = "class:kitty-clock" })'
+lsp 'hl.dsp.layout("splitratio -0.15")'
 
 # Layout: [btop | tty-clock / cmatrix]
 
-# ── 4. pipes — split RIGHT of tty-clock ──
+# ── 4. cava — split left of tty-clock (tty-clock stays left, cava opens right) ──
 lsp 'hl.dsp.focus({ window = "class:kitty-clock" })'
-lsp 'hl.dsp.layout("preselect r")'
+lsp 'hl.dsp.layout("preselect l")'
 sleep 0.05
-kitty --class kitty-pipes -e pipes.sh -p 3 -f 0 &
+kitty --class kitty-cava -e cava &
 sleep 0.4
 
-# Layout: [btop | tty-clock | pipes]
-#                [    cmatrix        ]
+# Layout: [btop | tty-clock | cava]
+#                [    cmatrix      ]
 
 # ── 5. fastfetch — floating window, window rule centers it ──
 kitty --class kitty-fastfetch --override font_size=14 -e bash -c 'fastfetch; exec bash' &

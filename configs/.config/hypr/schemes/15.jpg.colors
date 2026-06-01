@@ -1,0 +1,99 @@
+# Colors generated from 15.jpg on 2026-05-31
+# Edit any hex value, then run: scheme-apply.sh /home/Frik/wallpapers/15.jpg
+wallpaper="/home/Frik/wallpapers/15.jpg"
+
+# Background variants
+bg="#120102"
+bg_h="#000000"
+bg_s="#1e0103"
+
+# Background shades
+bg0="#120102"
+bg1="#311214"
+bg2="#512326"
+bg3="#7c3b3f"
+bg4="#95474b"
+
+# Grays
+gray0="#915b5e"
+gray1="#a67b7e"
+gray2="#bd9d9f"
+
+# Foreground shades
+fg0="#bd9d9f"
+fg1="#bd9d9f"
+fg2="#bd9d9f"
+fg3="#bd9d9f"
+fg4="#bd9d9f"
+
+# Main foreground alias
+fg="#bd9d9f"
+
+# Dark (muted) accents
+dark_red="#dd1f30"
+dark_green="#a4bee3"
+dark_yellow="#6688b8"
+dark_blue="#325386"
+dark_purple="#956995"
+dark_aqua="#84a0cb"
+dark_orange="#956981"
+
+# Vivid (bright) accents
+red="#dd1f30"
+green="#a4bee3"
+yellow="#6688b8"
+blue="#325386"
+purple="#956995"
+aqua="#84a0cb"
+orange="#956981"
+
+# Constants
+white="#ffffff"
+black="#000000"
+kitty_fg="#bd9d9f"
+
+# Main accent
+accent="#956981"
+
+# Btop UI
+btop_lines="#956981"
+btop_dividers="#7c3b3f"
+btop_text="#bd9d9f"
+btop_proc="#bd9d9f"
+
+# Btop gradient (low → high)
+btop_low="#84a0cb"
+btop_mid="#6688b8"
+btop_high="#dd1f30"
+
+# Cava gradient (bottom → top)
+cava_1="#dd1f30"
+cava_2="#dd1f30"
+cava_3="#956981"
+cava_4="#6688b8"
+
+tty_clock_color=5  # 0=black 1=red 2=green 3=yellow 4=blue 5=magenta 6=cyan 7=white
+cmatrix_color="magenta"  # black red green yellow blue magenta cyan white
+logo_color="#956981"
+
+# Waybar colors
+waybar_bg="#512326"
+waybar_bright="#bd9d9f"
+waybar_empty_button="#7c3b3f"
+
+# Rofi colors
+rofi_bg="#311214"
+rofi_fg="#bd9d9f"
+rofi_selected="#bd9d9f"
+
+# Rmpc colors
+rmpc_bg="#120102"
+rmpc_fg="#bd9d9f"
+rmpc_accent="#956981"
+rmpc_border="#7c3b3f"
+
+# Yazi colors
+yazi_bg="#120102"
+yazi_fg="#bd9d9f"
+yazi_selected="#956981"
+yazi_cwd="#325386"

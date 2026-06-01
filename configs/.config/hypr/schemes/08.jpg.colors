@@ -1,0 +1,98 @@
+# Colors generated from 08.jpg on 2026-05-31
+# Edit any hex value, then run: scheme-apply.sh /home/Frik/wallpapers/08.jpg
+wallpaper="/home/Frik/wallpapers/08.jpg"
+
+# Background variants
+bg="#010507"
+bg_h="#000000"
+bg_s="#020e13"
+
+# Background shades
+bg0="#010507"
+bg1="#11191d"
+bg2="#212d34"
+bg3="#374953"
+bg4="#475f6c"
+
+# Grays
+gray0="#58676f"
+gray1="#79858b"
+gray2="#9ba4a9"
+
+# Foreground shades
+fg0="#9ba4a9"
+fg1="#9ba4a9"
+fg2="#9ba4a9"
+fg3="#9ba4a9"
+fg4="#9ba4a9"
+
+# Main foreground alias
+fg="#9ba4a9"
+
+# Dark (muted) accents
+dark_red="#ce5568"
+dark_green="#2eacc7"
+dark_yellow="#4d6a67"
+dark_blue="#1c5f92"
+dark_purple="#5f285f"
+dark_aqua="#318ec7"
+dark_orange="#5f285c"
+
+# Vivid (bright) accents
+red="#ce5568"
+green="#2eacc7"
+yellow="#4d6a67"
+blue="#1c5f92"
+purple="#5f285f"
+aqua="#318ec7"
+orange="#5f285c"
+
+# Constants
+white="#ffffff"
+black="#000000"
+kitty_fg="#9ba4a9"
+
+# Main accent
+accent="#5f285c"
+
+# Btop UI
+btop_lines="#5f285c"
+btop_dividers="#374953"
+btop_text="#9ba4a9"
+btop_proc="#9ba4a9"
+
+# Btop gradient (low → high)
+btop_low="#318ec7"
+btop_mid="#4d6a67"
+btop_high="#ce5568"
+
+# Cava gradient (bottom → top)
+cava_1="#ce5568"
+cava_2="#ce5568"
+cava_3="#5f285c"
+cava_4="#4d6a67"
+
+# Fastfetch logo
+logo_color="#5f285c"
+
+# Waybar colors
+waybar_bg="#212d34"
+waybar_bright="#9ba4a9"
+waybar_empty_button="#374953"
+
+# Rofi colors
+rofi_bg="#11191d"
+rofi_fg="#9ba4a9"
+rofi_selected="#9ba4a9"
+
+# Rmpc colors
+rmpc_bg="#010507"
+rmpc_fg="#9ba4a9"
+rmpc_accent="#5f285c"
+rmpc_border="#374953"
+
+# Yazi colors
+yazi_bg="#010507"
+yazi_fg="#9ba4a9"
+yazi_selected="#5f285c"
+yazi_cwd="#1c5f92"

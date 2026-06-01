@@ -2,8 +2,13 @@
 ---- LOOK AND FEEL ----
 -----------------------
 
--- Load wallpaper-generated Material Design 3 colors (written by matugen on each wallpaper change)
 local colors = require("Modules/colors")
+
+hl.config({
+    dwindle = {
+        preserve_split = true,  -- Keep toggled split direction when new windows open
+    },
+})
 
 hl.config({
     general = {
@@ -13,8 +18,8 @@ hl.config({
         border_size = 2,  -- Window border thickness (pixels)
 
         col = {
-            active_border   = colors.outline,         -- Border color of the focused window
-            inactive_border = colors.outline_variant, -- Border color of unfocused windows
+            active_border   = colors.accent,         -- Border color of the focused window
+            inactive_border = colors.bg3, -- Border color of unfocused windows
         },
 
         resize_on_border = false,  -- If true, you can resize windows by dragging the border
@@ -26,7 +31,7 @@ hl.config({
         rounding       = 10,  -- Window corner rounding (pixels); 0 = square corners
         rounding_power = 2,   -- Controls the curve shape of rounded corners (higher = rounder)
 
-        active_opacity   = 0.8,  -- Opacity of the focused window
+        active_opacity   = 0.9,  -- Opacity of the focused window
         inactive_opacity = 0.8,  -- Opacity of unfocused windows
 
         shadow = {
