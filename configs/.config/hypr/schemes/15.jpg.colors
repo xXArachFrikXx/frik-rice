@@ -1,4 +1,4 @@
-# Colors generated from 15.jpg on 2026-05-31
+# Colors generated from 15.jpg on 2026-06-01
 # Edit any hex value, then run: scheme-apply.sh /home/Frik/wallpapers/15.jpg
 wallpaper="/home/Frik/wallpapers/15.jpg"
 
@@ -28,6 +28,7 @@ fg4="#bd9d9f"
 
 # Main foreground alias
 fg="#bd9d9f"
+kitty_fg="#bd9d9f"
 
 # Dark (muted) accents
 dark_red="#dd1f30"
@@ -50,12 +51,15 @@ orange="#956981"
 # Constants
 white="#ffffff"
 black="#000000"
-kitty_fg="#bd9d9f"
 
 # Main accent
-accent="#956981"
+tty_clock_color=5  # 0=black 1=red 2=green 3=yellow 4=blue 5=magenta 6=cyan 7=white
+cmatrix_color="magenta"  # black red green yellow blue magenta cyan white
+accent1="#956981"
+accent2="#956995"
+border1="#956981"
+border2="#956995"
 
-# Btop UI
 btop_lines="#956981"
 btop_dividers="#7c3b3f"
 btop_text="#bd9d9f"
@@ -67,13 +71,7 @@ btop_mid="#6688b8"
 btop_high="#dd1f30"
 
 # Cava gradient (bottom → top)
-cava_1="#dd1f30"
-cava_2="#dd1f30"
-cava_3="#956981"
-cava_4="#6688b8"
-
-tty_clock_color=5  # 0=black 1=red 2=green 3=yellow 4=blue 5=magenta 6=cyan 7=white
-cmatrix_color="magenta"  # black red green yellow blue magenta cyan white
+fastfetch_key="#bd9d9f"
 logo_color="#956981"
 
 # Waybar colors

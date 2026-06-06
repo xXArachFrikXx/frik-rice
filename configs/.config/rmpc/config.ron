@@ -6,7 +6,8 @@
     password: None,
     theme: "/home/Frik/.config/rmpc/theme.ron",
     cache_dir: None,
-    on_song_change: None,
+    lyrics_dir: "/home/Frik/.config/rmpc/lyrics",
+    on_song_change: ["/home/Frik/.config/rmpc/fetch-lyrics.sh"],
     volume_step: 5,
     max_fps: 30,
     scrolloff: 0,
@@ -14,7 +15,7 @@
     enable_mouse: true,
     scroll_amount: 1,
     enable_config_hot_reload: true,
-    enable_lyrics_hot_reload: false,
+    enable_lyrics_hot_reload: true,
     status_update_interval_ms: 1000,
     rewind_to_start_sec: None,
     keep_state_on_song_change: true,
@@ -149,29 +150,21 @@
                 direction: Horizontal,
                 panes: [
                     (
-                        size: "35%",
+                        size: "25%",
                         pane: Split(
                             direction: Vertical,
                             panes: [
                                 (
                                     size: "100%",
-                                    borders: "LEFT | RIGHT | TOP",
+                                    borders: "ALL",
                                     border_symbols: Rounded,
                                     pane: Pane(AlbumArt)
                                 ),
-                                (
-                                    size: "7",
-                                    borders: "ALL",
-                                    border_symbols: Inherited(parent: Rounded, top_left: "├", top_right: "┤",),
-                                    border_title: [(kind: Text(" Lyrics "))],
-                                    border_title_alignment: Right,
-                                    pane: Pane(Lyrics)
-                                ),
                             ],
                         ),
-                    ), 
+                    ),
                     (
-                        size: "65%",
+                        size: "75%",
                         pane: Split(
                             direction: Vertical,
                             panes: [

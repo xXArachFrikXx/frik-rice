@@ -46,9 +46,9 @@ $FILL "$TEMPLATES/rmpc-colors.ron"       "$CONF/rmpc/theme.ron"
 $FILL "$TEMPLATES/eww-colors.scss"       "$CONF/eww/colors.scss"
 $FILL "$TEMPLATES/yazi-theme.toml"       "$CONF/yazi/theme.toml"
 
-# === Patch starship prompt accent in-place ===
+# === Patch starship prompt accent1 in-place ===
 sed -i \
-    -e "s|\(bold \)#[0-9a-fA-F]*|\1$accent|g" \
+    -e "s|\(bold \)#[0-9a-fA-F]*|\1$accent1|g" \
     "$CONF/starship.toml"
 
 # === Patch tty-clock and cmatrix colors in-place ===
@@ -57,12 +57,23 @@ sed -i \
     -e "s|cmatrix -a -b -C [a-z]*|cmatrix -a -b -C $cmatrix_color|" \
     "$SCRIPTS/ws1-home.sh"
 
-# === Patch cava gradient colors in-place ===
+# === Patch cava gradient: accent1 (bottom) → accent2 (top), middle 2 interpolated ===
+read -r CAVA_1 CAVA_2 CAVA_3 CAVA_4 <<< "$(python3 - "$accent1" "$accent2" <<'PYEOF'
+import sys, colorsys
+def h2rgb(h): h=h.lstrip('#'); return tuple(int(h[i:i+2],16)/255 for i in (0,2,4))
+def rgb2h(r,g,b): return '#{:02x}{:02x}{:02x}'.format(int(r*255),int(g*255),int(b*255))
+def lerp(c1,c2,t):
+    r1,g1,b1=h2rgb(c1); r2,g2,b2=h2rgb(c2)
+    return rgb2h(r1+(r2-r1)*t, g1+(g2-g1)*t, b1+(b2-b1)*t)
+a,b=sys.argv[1],sys.argv[2]
+print(a, lerp(a,b,0.33), lerp(a,b,0.66), b)
+PYEOF
+)"
 sed -i \
-    -e "s|gradient_color_1 = '#[0-9a-fA-F]*'|gradient_color_1 = '$cava_1'|" \
-    -e "s|gradient_color_2 = '#[0-9a-fA-F]*'|gradient_color_2 = '$cava_2'|" \
-    -e "s|gradient_color_3 = '#[0-9a-fA-F]*'|gradient_color_3 = '$cava_3'|" \
-    -e "s|gradient_color_4 = '#[0-9a-fA-F]*'|gradient_color_4 = '$cava_4'|" \
+    -e "s|gradient_color_1 = '#[0-9a-fA-F]*'|gradient_color_1 = '$CAVA_1'|" \
+    -e "s|gradient_color_2 = '#[0-9a-fA-F]*'|gradient_color_2 = '$CAVA_2'|" \
+    -e "s|gradient_color_3 = '#[0-9a-fA-F]*'|gradient_color_3 = '$CAVA_3'|" \
+    -e "s|gradient_color_4 = '#[0-9a-fA-F]*'|gradient_color_4 = '$CAVA_4'|" \
     "$CONF/cava/config"
 
 # === Reload apps ===
@@ -74,6 +85,3 @@ gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 pkill -USR1 cava 2>/dev/null || true
 pkill -SIGUSR1 btop 2>/dev/null || true
 eww reload 2>/dev/null || true
-
-# Re-open homepage with updated theme colors
-"$SCRIPTS/ws1-home.sh" &

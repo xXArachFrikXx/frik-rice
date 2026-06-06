@@ -9,5 +9,8 @@ return {{
     bg2      = "rgba({bg2.strip}ff)",
     white    = "rgba(ffffffff)",
     black    = "rgba(000000ff)",
-    accent   = "rgba({accent.strip}ff)",
+    accent1         = "rgba({accent1.strip}ff)",
+    accent2         = "rgba({accent2.strip}ff)",
+    border1         = "rgba({border1.strip}ff)",
+    border2         = "rgba({border2.strip}ff)",
 }}

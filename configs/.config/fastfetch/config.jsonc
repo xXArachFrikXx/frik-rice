@@ -1,11 +1,14 @@
 {
+    // WARNING: All "key" fields and box-drawing "format" lines MUST use {##f1ed0b} for colors.
+    // Using any other color variable (e.g. {##f1ed0b}) silently breaks the Nerd Font
+    // icons — they disappear completely. {##f1ed0b} is the only safe token here.
     "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
     "logo": {
         "type": "builtin",
         "source": "arch",
         "color": {
-            "1": "#b44fff",
-            "2": "#b44fff"
+            "1": "#f1ed0b",
+            "2": "#f1ed0b"
         },
         "padding": {
             "top": 1,
@@ -75,7 +78,7 @@
         },
         {
             "type": "shell",
-            "key": "{##f1ed0b} Shell"
+            "key": "{##f1ed0b} Shell"
         },
         {
             "type": "terminal",

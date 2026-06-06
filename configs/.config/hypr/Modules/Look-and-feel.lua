@@ -18,7 +18,7 @@ hl.config({
         border_size = 2,  -- Window border thickness (pixels)
 
         col = {
-            active_border   = colors.accent,         -- Border color of the focused window
+            active_border   = { colors = { colors.border1, colors.border2 }, angle = 45 },
             inactive_border = colors.bg3, -- Border color of unfocused windows
         },
 

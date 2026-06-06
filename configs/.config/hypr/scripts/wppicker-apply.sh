@@ -18,7 +18,7 @@ SELECTED_PATH=$(ls "$WALLPAPER_DIR/$NAME".{jpg,jpeg,png,gif} 2>/dev/null | head 
 eww close wallpaper-picker
 
 # Set the wallpaper via swww
-awww img --transition-type wipe --transition-angle 30 --transition-fps 60 "$SELECTED_PATH"
+awww img --transition-type outer --transition-duration 1 --transition-fps 60 "$SELECTED_PATH"
 
 # Apply the per-wallpaper color scheme
 "$HOME/.config/hypr/scripts/scheme-apply.sh" "$SELECTED_PATH"

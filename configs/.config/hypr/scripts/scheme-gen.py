@@ -52,7 +52,7 @@ def shift_hue(color: str, target_h: float) -> str:
 
 
 def assign_by_hue(accents: list[str]) -> dict[str, str]:
-    """Assign 6 extracted colors to 7 gruvbox accent names by nearest hue.
+    """Assign 6 extracted colors to 7 gruvbox accent1 names by nearest hue.
     One name is always derived via hue-shift of its nearest neighbour."""
     targets = [
         ("red",    0.0 / 360),
@@ -197,7 +197,8 @@ def main() -> None:
         "white":       "#ffffff",
         "black":       "#000000",
         "kitty_fg":    fg,
-        "accent":         orange,
+        "accent1":         orange,
+        "accent2":        purple,
         "btop_lines":     orange,
         "btop_dividers":  bg3,
         "btop_text":      gray2,
@@ -205,11 +206,10 @@ def main() -> None:
         "btop_low":       dark_aqua,
         "btop_mid":       dark_yellow,
         "btop_high":      red,
-        "cava_1":      red,
-        "cava_2":      dark_red,
-        "cava_3":      orange,
-        "cava_4":      yellow,
-        "logo_color":  orange,
+        "border1":     orange,
+        "border2":     purple,
+        "logo_color":      orange,
+        "fastfetch_key":   fg,
         "tty_clock_color": "1",
         "cmatrix_color":   "green",
         "waybar_bg":           bg2,
@@ -245,11 +245,11 @@ def main() -> None:
         ("# Dark (muted) accents", ["dark_red", "dark_green", "dark_yellow", "dark_blue", "dark_purple", "dark_aqua", "dark_orange"]),
         ("# Vivid (bright) accents", ["red", "green", "yellow", "blue", "purple", "aqua", "orange"]),
         ("# Constants", ["white", "black", "kitty_fg"]),
-        ("# Main accent", ["accent"]),
+        ("# Main accents", ["accent1", "accent2"]),
         ("# Btop UI", ["btop_lines", "btop_dividers", "btop_text", "btop_proc"]),
         ("# Btop gradient (low → high)", ["btop_low", "btop_mid", "btop_high"]),
-        ("# Cava gradient (bottom → top)", ["cava_1", "cava_2", "cava_3", "cava_4"]),
-        ("# Fastfetch logo", ["logo_color"]),
+        ("# Hyprland border gradient", ["border1", "border2"]),
+        ("# Fastfetch colors", ["logo_color", "fastfetch_key"]),
         ("# Terminal colors", ["tty_clock_color", "cmatrix_color"]),
         ("# Waybar colors", ["waybar_bg", "waybar_bright", "waybar_empty_button"]),
         ("# Rofi colors", ["rofi_bg", "rofi_fg", "rofi_selected"]),

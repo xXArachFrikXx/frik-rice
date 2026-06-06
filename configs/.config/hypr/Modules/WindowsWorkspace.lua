@@ -114,4 +114,3 @@ hl.layer_rule({ name = "swaync-win-blur", match = { namespace = "swaync-notifica
 -- To pin workspaces to specific monitors, add: monitor = "HDMI-A-1" (or your port name).
 -- Run `hyprctl monitors` inside Hyprland to see your actual port names.
 
-hl.workspace_rule({ workspace = "1",  on_created_empty = "exec:~/.config/hypr/scripts/ws1-home.sh" })

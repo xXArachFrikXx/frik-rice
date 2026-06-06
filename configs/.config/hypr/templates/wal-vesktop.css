@@ -30,7 +30,7 @@
 
 	/* accent colors */
 	--accent-1: {dark_yellow};  /* hyperlinks and accent text */
-	--accent-2: {accent};        /* small accent UI components */
+	--accent-2: {accent1};        /* small accent UI components */
 	--accent-3: {dark_orange};     /* accent buttons (default state) */
 	--accent-4: {bg3};          /* accent buttons (hovered) */
 	--accent-5: {dark_green};   /* accent buttons (clicked) */
@@ -46,7 +46,7 @@
 	--text-5: {bg3};   /* muted channels, disabled text, faint labels */
 
 	/* background colors (4 = darkest → 1 = lightest) */
-	--bg-1: {accent}; /* buttons — pressed/clicked state */
+	--bg-1: {accent1}; /* buttons — pressed/clicked state */
 	--bg-2: {bg3};      /* buttons — default resting state */
 	--bg-3: {bg3};      /* spacing areas and secondary panels */
 	--bg-4: {bg};       /* primary app background (darkest layer) */

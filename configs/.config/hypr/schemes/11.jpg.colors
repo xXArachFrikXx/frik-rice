@@ -1,4 +1,4 @@
-# Colors generated from 11.jpg on 2026-05-30
+# Colors generated from 11.jpg on 2026-06-01
 # Edit any hex value, then run: scheme-apply.sh /home/Frik/wallpapers/11.jpg
 wallpaper="/home/Frik/wallpapers/11.jpg"
 
@@ -55,7 +55,10 @@ black="#000000"
 # Main accent
 tty_clock_color=4  # 0=black 1=red 2=green 3=yellow 4=blue 5=magenta 6=cyan 7=white
 cmatrix_color="blue"  # black red green yellow blue magenta cyan white
-accent="#6980dc"
+accent1="#6980dc"
+accent2="#bd6ebd"
+border1="#6980dc"
+border2="#bd6ebd"
 
 btop_lines="#6980dc"
 btop_dividers="#37405b"
@@ -68,10 +71,7 @@ btop_mid="#6980dc"
 btop_high="#6f71bd"
 
 # Cava gradient (bottom → top)
-cava_1="#6f71bd"
-cava_2="#6f71bd"
-cava_3="#6980dc"
-cava_4="#83bff4"
+fastfetch_key="#9b9fad"
 logo_color="#6980dc"
 
 # Waybar colors

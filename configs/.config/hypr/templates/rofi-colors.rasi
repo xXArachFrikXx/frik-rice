@@ -20,7 +20,7 @@
     orange:      {orange};
     white:       {white};
     black:       {black};
-    accent:      {accent};
+    accent:      {accent1};
 
     rofi-bg:       {rofi_bg};
     rofi-fg:       {rofi_fg};

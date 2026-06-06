@@ -1,4 +1,7 @@
 {
+    // WARNING: All "key" fields and box-drawing "format" lines MUST use {accent1.fc} for colors.
+    // Using any other color variable (e.g. {fastfetch_key.fc}) silently breaks the Nerd Font
+    // icons — they disappear completely. {accent1.fc} is the only safe token here.
     "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
     "logo": {
         "type": "builtin",
@@ -19,35 +22,35 @@
     "modules": [
         {
             "type": "custom",
-            "format": "{accent.fc}┌─ 󰇅 HOST ───────────────────────────────────────┐"
+            "format": "{accent1.fc}┌─ 󰇅 HOST ───────────────────────────────────────┐"
         },
         {
             "type": "board",
-            "key": "{accent.fc}󰆼 Motherboard"
+            "key": "{accent1.fc}󰆼 Motherboard"
         },
         {
             "type": "cpu",
-            "key": "{accent.fc} CPU"
+            "key": "{accent1.fc} CPU"
         },
         {
             "type": "gpu",
-            "key": "{accent.fc}󰢮 GPU"
+            "key": "{accent1.fc}󰢮 GPU"
         },
         {
             "type": "memory",
-            "key": "{accent.fc} Memory"
+            "key": "{accent1.fc} Memory"
         },
         {
             "type": "disk",
-            "key": "{accent.fc}󰋊 Disk"
+            "key": "{accent1.fc}󰋊 Disk"
         },
         {
             "type": "display",
-            "key": "{accent.fc}󰍹 Display"
+            "key": "{accent1.fc}󰍹 Display"
         },
         {
             "type": "custom",
-            "format": "{accent.fc}└────────────────────────────────────────────────┘"
+            "format": "{accent1.fc}└────────────────────────────────────────────────┘"
         },
         {
             "type": "custom",
@@ -55,43 +58,43 @@
         },
         {
             "type": "custom",
-            "format": "{accent.fc}┌─ 󰅐 RUNTIME ────────────────────────────────────┐"
+            "format": "{accent1.fc}┌─ 󰅐 RUNTIME ────────────────────────────────────┐"
         },
         {
             "type": "os",
-            "key": "{accent.fc}󰣇 OS"
+            "key": "{accent1.fc}󰣇 OS"
         },
         {
             "type": "osage",
-            "key": "{accent.fc}󰃰 OS Age"
+            "key": "{accent1.fc}󰃰 OS Age"
         },
         {
             "type": "kernel",
-            "key": "{accent.fc} Kernel"
+            "key": "{accent1.fc} Kernel"
         },
         {
             "type": "wm",
-            "key": "{accent.fc}󰖲 WM"
+            "key": "{accent1.fc}󰖲 WM"
         },
         {
             "type": "shell",
-            "key": "{accent.fc} Shell"
+            "key": "{accent1.fc} Shell"
         },
         {
             "type": "terminal",
-            "key": "{accent.fc}󰆍 Terminal"
+            "key": "{accent1.fc}󰆍 Terminal"
         },
         {
             "type": "uptime",
-            "key": "{accent.fc}󰔚 Uptime"
+            "key": "{accent1.fc}󰔚 Uptime"
         },
         {
             "type": "packages",
-            "key": "{accent.fc}󰏖 Packages"
+            "key": "{accent1.fc}󰏖 Packages"
         },
         {
             "type": "custom",
-            "format": "{accent.fc}└────────────────────────────────────────────────┘"
+            "format": "{accent1.fc}└────────────────────────────────────────────────┘"
         }
     ]
 }

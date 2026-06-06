@@ -32,7 +32,7 @@
 @define-color dark_orange  {dark_orange};
 @define-color white        {white};
 @define-color black        {black};
-@define-color accent       {accent};
+@define-color accent       {accent1};
 
 /* Per-program colors */
 @define-color waybar_bg           {waybar_bg};

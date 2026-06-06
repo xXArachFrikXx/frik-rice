@@ -1,4 +1,4 @@
-# Colors generated from 18.png on 2026-05-31
+# Colors generated from 18.png on 2026-06-01
 # Edit any hex value, then run: scheme-apply.sh /home/Frik/wallpapers/18.png
 wallpaper="/home/Frik/wallpapers/18.png"
 
@@ -28,6 +28,7 @@ fg4="#a1a1a3"
 
 # Main foreground alias
 fg="#a1a1a3"
+kitty_fg="#a1a1a3"
 
 # Dark (muted) accents
 dark_red="#7b2d33"
@@ -50,12 +51,15 @@ orange="#ba848a"
 # Constants
 white="#ffffff"
 black="#000000"
-kitty_fg="#a1a1a3"
 
 # Main accent
-accent="#ba848a"
+tty_clock_color=1  # 0=black 1=red 2=green 3=yellow 4=blue 5=magenta 6=cyan 7=white
+cmatrix_color="green"  # black red green yellow blue magenta cyan white
+accent1="#ba848a"
+accent2="#ba84ba"
+border1="#ba848a"
+border2="#ba84ba"
 
-# Btop UI
 btop_lines="#ba848a"
 btop_dividers="#434347"
 btop_text="#a1a1a3"
@@ -67,17 +71,8 @@ btop_mid="#687881"
 btop_high="#7b2d33"
 
 # Cava gradient (bottom → top)
-cava_1="#7b2d33"
-cava_2="#7b2d33"
-cava_3="#ba848a"
-cava_4="#687881"
-
-# Fastfetch logo
+fastfetch_key="#a1a1a3"
 logo_color="#ba848a"
-
-# Terminal colors
-tty_clock_color="1"
-cmatrix_color="green"
 
 # Waybar colors
 waybar_bg="#29292c"
